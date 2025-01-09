@@ -86,6 +86,10 @@ jobs:
       - name: Before script
         run: |
           source src/main/docker/env.bash
+          echo "Docker Version:"
+          docker --version
+          echo "Docker Compose Version:"
+          docker-compose --version
           docker compose -f src/main/docker/docker-compose.yml up -d eiffel-er mongodb rabbitmq jenkins mail-server ldap ldap-seed ldap2 ldap2-seed
           echo 'Sleeping till Jenkins is up.'
           timeout 90 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' $HOST:$JENKINS_PORT/login)" != "200" ]]; do sleep 5; done' || false
