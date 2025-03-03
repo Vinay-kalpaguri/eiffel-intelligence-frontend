@@ -33,7 +33,7 @@ jobs:
       # Install Firefox and dependencies using yum (dbus-glib for Firefox issue)
       - name: Install dependencies using yum
         run: |
-          sudo yum install -y dbus-glib
+          sudo apt-get install -y libdbus-glib-1-2
       - uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: '115.0esr'
