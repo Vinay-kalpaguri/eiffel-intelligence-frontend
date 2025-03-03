@@ -33,6 +33,12 @@ jobs:
       - uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: '102.0esr'
+
+      # Install missing dependencies for Firefox
+      - name: Install Firefox dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libdbus-glib-1-2
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
