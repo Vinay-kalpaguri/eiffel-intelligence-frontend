@@ -30,13 +30,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      # Install Firefox and dependencies using yum (dbus-glib for Firefox issue)
-      - name: Install dependencies using yum
+      # Install missing dependencies for Firefox
+      - name: Install Firefox dependencies
         run: |
           sudo apt-get install -y libdbus-glib-1-2
       - uses: browser-actions/setup-firefox@v1
         with:
-          firefox-version: '115.0esr'
+          firefox-version: '102.0esr'
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
