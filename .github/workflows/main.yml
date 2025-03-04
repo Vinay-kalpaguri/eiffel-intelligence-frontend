@@ -34,7 +34,7 @@ jobs:
       - name: Install Firefox dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libdbus-glib-1-2 libasound2 libxss1 libgdk-pixbuf2.0-0
+          sudo apt-get install -y libdbus-glib-1-2 libasound2-dev libxss1 libgdk-pixbuf2.0-0
       - uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: '102.0esr'
