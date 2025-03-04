@@ -33,6 +33,7 @@ jobs:
       # Install missing dependencies for Firefox
       - name: Install Firefox dependencies
         run: |
+          sudo apt-get update
           sudo apt-get install -y libdbus-glib-1-2 libasound2 libxss1 libgdk-pixbuf2.0-0
       - uses: browser-actions/setup-firefox@v1
         with:
