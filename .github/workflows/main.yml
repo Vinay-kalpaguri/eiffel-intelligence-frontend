@@ -20,7 +20,7 @@ jobs:
     if: github.repository == 'Vinay-kalpaguri/eiffel-intelligence-frontend'
     # The type of runner that the job will run on
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env: 
       EI_BACKEND_PORT: 8099
       M2_HOME: /opt/apache-maven-3.6.3
@@ -30,11 +30,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      # Install missing dependencies for Firefox
-      - name: Install Firefox dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libdbus-glib-1-2 libasound2-dev libxss1 libgdk-pixbuf2.0-0
       - uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: '115.0esr'
@@ -59,7 +54,7 @@ jobs:
     if: github.repository == 'Vinay-kalpaguri/eiffel-intelligence-frontend'
     # The type of runner that the job will run on
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env: 
       EI_BACKEND_PORT: 8099
       M2_HOME: /opt/apache-maven-3.6.3
@@ -122,7 +117,7 @@ jobs:
     if: github.repository == 'Vinay-kalpaguri/eiffel-intelligence-frontend' && github.event_name == 'push'
     # The type of runner that the job will run on
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env: 
       EI_BACKEND_PORT: 8099
       M2_HOME: /opt/apache-maven-3.6.3
